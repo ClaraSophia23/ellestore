@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elle Store | App de Produtos Femininos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="brand">
+        <span class="brand-mark">E</span>
+        <div>
+          <strong>Elle Store</strong>
+          <small>Moda, beleza e autocuidado</small>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <a href="#produtos">Produtos</a>
+        <a href="#vantagens">Vantagens</a>
+        <a href="#contato" class="button button-outline">Contato</a>
+      </div>
+    </nav>
+
+    <section class="hero-content">
+      <div class="hero-copy">
+        <p class="eyebrow">Seu app de compras femininas em um clique</p>
+        <h1>Produtos que valorizam seu estilo, sua rotina e seu bem-estar.</h1>
+        <p class="hero-text">
+          Descubra uma selecao especial de moda, skincare e acessorios com entrega rapida,
+          ofertas sazonais e atendimento inteligente com chatbot.
+        </p>
+        <div class="hero-cta">
+          <a href="#produtos" class="button">Explorar colecao</a>
+          <a href="../docs/uml.html" class="button button-outline">Ver documentacao UML</a>
+        </div>
+        <ul class="hero-highlights">
+          <li>Entrega nacional</li>
+          <li>Curadoria premium</li>
+          <li>Atendimento 24h</li>
+        </ul>
+      </div>
+
+      <div class="hero-card">
+        <span class="badge">Colecao em destaque</span>
+        <h2>Glow Essentials</h2>
+        <p>Kit com hidratante, serum e necessaire premium.</p>
+        <div class="price-block">
+          <strong>R$ 189,90</strong>
+          <span>ou 6x sem juros</span>
+        </div>
+        <div class="card-stats">
+          <article>
+            <strong>+12 mil</strong>
+            <span>clientes</span>
+          </article>
+          <article>
+            <strong>4,9/5</strong>
+            <span>avaliacao media</span>
+          </article>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section" id="produtos">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Catalogo</p>
+          <h2>Escolha sua proxima paixao</h2>
+        </div>
+        <div class="filters" aria-label="Filtros de categoria">
+          <button class="filter-button active" data-filter="todos">Todos</button>
+          <button class="filter-button" data-filter="moda">Moda</button>
+          <button class="filter-button" data-filter="beleza">Beleza</button>
+          <button class="filter-button" data-filter="acessorios">Acessorios</button>
+        </div>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+        <article class="product-card" data-category="moda">
+          <span class="product-tag">Moda</span>
+          <h3>Vestido Aurora</h3>
+          <p>Tecido leve com modelagem elegante para dia e noite.</p>
+          <div class="product-footer">
+            <strong>R$ 249,90</strong>
+            <button class="button small add-cart" data-product="Vestido Aurora">Adicionar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="beleza">
+          <span class="product-tag">Beleza</span>
+          <h3>Serum Lumina</h3>
+          <p>Vitamina C e acido hialuronico para uma pele radiante.</p>
+          <div class="product-footer">
+            <strong>R$ 89,90</strong>
+            <button class="button small add-cart" data-product="Serum Lumina">Adicionar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="acessorios">
+          <span class="product-tag">Acessorios</span>
+          <h3>Bolsa Harmonia</h3>
+          <p>Design minimalista com acabamento premium e divisorias internas.</p>
+          <div class="product-footer">
+            <strong>R$ 159,90</strong>
+            <button class="button small add-cart" data-product="Bolsa Harmonia">Adicionar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="moda">
+          <span class="product-tag">Moda</span>
+          <h3>Blazer Essencia</h3>
+          <p>Corte moderno para compor looks de trabalho e eventos.</p>
+          <div class="product-footer">
+            <strong>R$ 219,90</strong>
+            <button class="button small add-cart" data-product="Blazer Essencia">Adicionar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="beleza">
+          <span class="product-tag">Beleza</span>
+          <h3>Kit Rosa Ritual</h3>
+          <p>Sabonete facial, mascara nutritiva e creme para maos.</p>
+          <div class="product-footer">
+            <strong>R$ 129,90</strong>
+            <button class="button small add-cart" data-product="Kit Rosa Ritual">Adicionar</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="acessorios">
+          <span class="product-tag">Acessorios</span>
+          <h3>Brinco Lumiere</h3>
+          <p>Peca delicada banhada a ouro com brilho sofisticado.</p>
+          <div class="product-footer">
+            <strong>R$ 69,90</strong>
+            <button class="button small add-cart" data-product="Brinco Lumiere">Adicionar</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section benefits" id="vantagens">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Experiencia</p>
+          <h2>Mais do que comprar: viver a marca</h2>
+        </div>
+      </div>
+      <div class="benefits-grid">
+        <article>
+          <h3>Recomendacoes inteligentes</h3>
+          <p>O app sugere produtos de acordo com preferencia, categoria e comportamento de compra.</p>
+        </article>
+        <article>
+          <h3>Chatbot de atendimento</h3>
+          <p>Resposta imediata sobre pedidos, entregas, promocoes e produtos disponiveis.</p>
+        </article>
+        <article>
+          <h3>Programa de fidelidade</h3>
+          <p>Acumule pontos e troque por beneficios exclusivos e cupons personalizados.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Clientes</p>
+          <h2>O que dizem sobre a Elle Store</h2>
+        </div>
+      </div>
+      <div class="testimonials-grid">
+        <blockquote>
+          "A navegacao e linda, o atendimento no chat ajuda muito e os produtos chegaram super rapido."
+        </blockquote>
+        <blockquote>
+          "Achei presentes incriveis e ainda recebi sugestoes perfeitas para minha rotina."
+        </blockquote>
+        <blockquote>
+          "A proposta do app transmite cuidado e sofisticação em cada detalhe."
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section contact" id="contato">
+      <div>
+        <p class="eyebrow">Contato</p>
+        <h2>Quer levar esse app para sua marca?</h2>
+        <p>Entre em contato para personalizacao, novas colecoes e estrategias digitais.</p>
+      </div>
+      <a class="button" href="mailto:contato@ellestore.com">contato@ellestore.com</a>
+    </section>
+  </main>
+
+  <aside class="cart-toast" id="cart-toast" aria-live="polite">
+    <strong id="cart-count">0 itens</strong>
+    <span>na sua sacola virtual</span>
+  </aside>
+
+  <section class="chatbot" aria-label="Chatbot">
+    <button class="chatbot-toggle" id="chatbot-toggle" aria-expanded="false" aria-controls="chatbot-window">
+      Chat com a Elle
+    </button>
+    <div class="chatbot-window hidden" id="chatbot-window">
+      <div class="chatbot-header">
+        <div>
+          <strong>Assistente Elle</strong>
+          <span>Online agora</span>
+        </div>
+      </div>
+      <div class="chatbot-messages" id="chatbot-messages">
+        <div class="message bot">
+          Oi! Eu posso ajudar com entregas, produtos, promocoes e cuidados com a compra. Experimente perguntar:
+          "quais promocoes existem?".
+        </div>
+      </div>
+      <form class="chatbot-form" id="chatbot-form">
+        <input
+          type="text"
+          id="chatbot-input"
+          placeholder="Digite sua pergunta"
+          aria-label="Digite sua pergunta para o chatbot"
+          required
+        >
+        <button type="submit" class="button small">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

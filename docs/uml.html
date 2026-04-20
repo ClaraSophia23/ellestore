@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentacao UML | Elle Store</title>
+  <style>
+    :root {
+      --bg: #fff7f5;
+      --card: #ffffff;
+      --ink: #2e1d24;
+      --muted: #6e5560;
+      --line: #c88ba2;
+      --accent: #f8dde5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #fffaf9 0%, #fff1ef 100%);
+      color: var(--ink);
+      padding: 24px;
+    }
+
+    main {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+    }
+
+    h1, h2 {
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid rgba(200, 139, 162, 0.3);
+      border-radius: 22px;
+      padding: 24px;
+      margin: 24px 0;
+      box-shadow: 0 16px 40px rgba(124, 74, 93, 0.08);
+    }
+
+    .diagram-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .uml-box {
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      background: #fffdfd;
+      padding: 18px;
+    }
+
+    .uml-box h3 {
+      margin-top: 0;
+    }
+
+    .uml-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .flow {
+      display: grid;
+      gap: 10px;
+    }
+
+    .arrow {
+      text-align: center;
+      color: var(--line);
+      font-weight: bold;
+    }
+
+    .actor {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    code, pre {
+      font-family: Consolas, monospace;
+    }
+
+    pre {
+      background: #fffdfd;
+      border: 1px solid rgba(200, 139, 162, 0.25);
+      border-radius: 18px;
+      padding: 18px;
+      overflow-x: auto;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Documentacao UML da Elle Store</h1>
+    <p>
+      Esta pagina resume a modelagem do site/app de venda de produtos femininos, com foco
+      nas interacoes principais da cliente, do catalogo e do chatbot.
+    </p>
+
+    <section class="panel">
+      <h2>Caso de Uso</h2>
+      <div class="diagram-grid">
+        <div class="uml-box">
+          <span class="actor">Cliente</span>
+          <ul class="uml-list">
+            <li>Visualizar catalogo</li>
+            <li>Filtrar produtos</li>
+            <li>Adicionar item a sacola</li>
+            <li>Consultar chatbot</li>
+            <li>Solicitar informacoes de entrega e pagamento</li>
+          </ul>
+        </div>
+        <div class="uml-box">
+          <span class="actor">Administrador</span>
+          <ul class="uml-list">
+            <li>Atualizar colecoes</li>
+            <li>Gerenciar promocoes</li>
+            <li>Acompanhar atendimento</li>
+            <li>Monitorar pedidos e estoque</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Diagrama de Classes</h2>
+      <div class="flow">
+        <div class="uml-box">
+          <h3>Classe: Produto</h3>
+          <p><strong>Atributos</strong></p>
+          <ul class="uml-list">
+            <li>nome</li>
+            <li>categoria</li>
+            <li>descricao</li>
+            <li>preco</li>
+          </ul>
+        </div>
+        <div class="arrow">↓</div>
+        <div class="uml-box">
+          <h3>Classe: Sacola</h3>
+          <p><strong>Atributos</strong></p>
+          <ul class="uml-list">
+            <li>itens</li>
+            <li>quantidadeTotal</li>
+          </ul>
+          <p><strong>Responsabilidades</strong></p>
+          <ul class="uml-list">
+            <li>adicionarProduto()</li>
+            <li>atualizarResumo()</li>
+          </ul>
+        </div>
+        <div class="arrow">↓</div>
+        <div class="uml-box">
+          <h3>Classe: Chatbot</h3>
+          <p><strong>Atributos</strong></p>
+          <ul class="uml-list">
+            <li>mensagens</li>
+            <li>perguntasConhecidas</li>
+          </ul>
+          <p><strong>Responsabilidades</strong></p>
+          <ul class="uml-list">
+            <li>receberMensagem()</li>
+            <li>gerarResposta()</li>
+            <li>exibirMensagem()</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Diagrama de Sequencia</h2>
+      <pre>
+Cliente           Interface Web           Chatbot
+  |                    |                    |
+  |-- digita pergunta ->|                    |
+  |                    |-- envia texto ---->|
+  |                    |<-- resposta -------|
+  |<-- exibe resposta -|                    |
+      </pre>
+      <pre>
+Cliente           Interface Web           Sacola
+  |                    |                    |
+  |-- clica adicionar ->|                    |
+  |                    |-- add produto ---->|
+  |                    |<-- total atualizado|
+  |<-- resumo sacola --|                    |
+      </pre>
+    </section>
+
+    <section class="panel">
+      <h2>Observacoes de Arquitetura</h2>
+      <ul class="uml-list">
+        <li>A camada HTML organiza estrutura e conteudo.</li>
+        <li>O CSS concentra layout, responsividade e identidade visual.</li>
+        <li>O JavaScript aplica filtros, atualiza a sacola e controla o chatbot.</li>
+        <li>O chatbot atual trabalha com respostas baseadas em palavras-chave.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
